@@ -1,4 +1,3 @@
-
 ### New York High Schools App 
 
 Create a native app in Swift with **SwiftUI** components to provide information on NYC High schools.
@@ -9,4 +8,4 @@ Create a native app in Swift with **SwiftUI** components to provide information 
 - Please implement using **MVVM** architecture to solve **#1** and **#2**
 
 
-
+![Simulator Screen Recording - iPhone 16 - 2024-11-13 at 14 09 22](https://github.com/user-attachments/assets/df6b7da1-7079-4cd4-a6b8-57bc22707e2d)
