@@ -71,7 +71,7 @@ struct ContentView: View {
 }
 ```
 
-- `typingTimer` helps us to make a delayed second during user typing to avoid searching on any character change
+- `typingTimer` helps us to make a delayed second during user typing to avoid searching on any character change. Super important when you search and fecth remote information. 
 
 - `searchable` implicitly processes any change on `searchText` variable storing its value state
 
