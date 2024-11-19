@@ -73,7 +73,7 @@ struct ContentView: View {
 
 - `typingTimer` helps us to make a delayed second during user typing to avoid searching on any character change
 
-- `searchable` processes implicitly any change on `searchText` variable storing its value state
+- `searchable` implicitly processes any change on `searchText` variable storing its value state
 
 -  `onChange(of: searchText)` detects any change on `searchText`variable allowing us more control in the `newValue` value. We can invalidate the timer if It's active and re-init the timer after 1 second executing the `searching` method on `View Model`.
 
