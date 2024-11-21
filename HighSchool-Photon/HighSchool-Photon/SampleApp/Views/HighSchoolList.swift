@@ -11,13 +11,32 @@ struct HighSchoolList: View {
     @State private var viewModel = HighSchoolViewModel(service: HighSchoolService(urlString: "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"))
     @State private var showError: Bool = false
 
+    // Searchable
+    @State private var searchText: String = ""
+    @State private var searchDelayTimer: Timer?
+
     var body: some View {
         NavigationStack {
-            List(viewModel.highSchools) { highSchool in
-                NavigationLink(destination: HighSchoolDetail(highSchool: highSchool)) {
-                    HighSchoolRow(school: highSchool)
+
+            VStack {
+                if viewModel.isLoading {
+                    ProgressView {
+                        Text("Loading...")
+                    }
+                } else {
+
+                    if viewModel.highSchools.isEmpty {
+                        Text("No results for '**\(searchText)**'")
+                            .padding()
+                    }
+
+                    List(viewModel.highSchools) { highSchool in
+                        NavigationLink(destination: HighSchoolDetail(highSchool: highSchool)) {
+                            HighSchoolRow(school: highSchool)
+                        }
+                        .foregroundStyle(.indigo)
+                    }
                 }
-                .foregroundStyle(.indigo)
             }
             .listStyle(.plain)
             .navigationBarTitle("NY High Schools")
@@ -36,6 +55,13 @@ struct HighSchoolList: View {
                     message: Text(viewModel.errorMessage ?? "Unknown Error"),
                     dismissButton: .cancel()
                 )
+            }
+            .searchable(text: $searchText, prompt: "Search High Schools")
+            .onChange(of: searchText) { _ , newValue in
+                searchDelayTimer?.invalidate()
+                searchDelayTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in
+                    Task { await viewModel.searchHighSchool(newValue) }
+                }
             }
         }
     }
