@@ -9,3 +9,10 @@ Create a native app in Swift with **SwiftUI** components to provide information 
 
 
 ![Simulator Screen Recording - iPhone 16 - 2024-11-13 at 14 09 22](https://github.com/user-attachments/assets/df6b7da1-7079-4cd4-a6b8-57bc22707e2d)
+
+
+--- 
+## Update using `searchable`
+
+![searchable](https://github.com/user-attachments/assets/4df4fb67-5cff-494e-b8c2-7e68dcb8ed6f)
+
