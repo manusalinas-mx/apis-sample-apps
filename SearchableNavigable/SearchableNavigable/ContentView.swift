@@ -20,7 +20,12 @@ struct ContentView: View {
 
                 Spacer()
             }
-            .navigationDestination(isPresented: $viewModel.shouldNavigate) {
+            // Option 1
+//            .navigationDestination(isPresented: $viewModel.shouldNavigate) {
+//                SearchResultView(results: viewModel.results)
+//            }
+            // Option 2
+            .sheet(isPresented: $viewModel.shouldNavigate) {
                 SearchResultView(results: viewModel.results)
             }
             .searchable(text: $searchText)
