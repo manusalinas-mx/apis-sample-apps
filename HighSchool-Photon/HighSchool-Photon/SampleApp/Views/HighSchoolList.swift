@@ -33,6 +33,11 @@ struct HighSchoolList: View {
                     List(viewModel.highSchools) { highSchool in
                         NavigationLink(destination: HighSchoolDetail(highSchool: highSchool)) {
                             HighSchoolRow(school: highSchool)
+                                .onAppear {
+                                    if viewModel.highSchools.isLastItem(highSchool) {
+                                        let _ =  print("ultimo item: \(highSchool.name)")
+                                    }
+                                }
                         }
                         .foregroundStyle(.indigo)
                     }
