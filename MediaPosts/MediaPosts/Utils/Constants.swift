@@ -8,6 +8,7 @@
 import Foundation
 
 struct Constants {
-    static let kUrlPosts = "https://jsonplaceholder.typicode.com/posts"
-    static let kUrlComments = "https://jsonplaceholder.typicode.com/comments"
+    static let kBaseUrl = "https://jsonplaceholder.typicode.com"
+    static let kUrlPosts = "/posts"
+    static let kUrlComments = "/comments"
 }

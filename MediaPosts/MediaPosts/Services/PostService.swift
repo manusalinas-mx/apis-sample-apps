@@ -9,12 +9,19 @@ import Foundation
 
 // MARK: - Protocol
 protocol PostServiceProtocol {
+    var baseUrl: String { get set }
     func fetchPosts() async throws -> [Post]
     func fetchComments() async throws -> [PostComment]
 }
 
 // MARK: - Implementation
 class PostService: PostServiceProtocol {
+    var baseUrl: String
+
+    init(baseUrl: String) {
+        self.baseUrl = baseUrl
+    }
+
     // MARK: Private methods
     private func fetchData<T: Decodable>(from url: URL) async throws -> T {
         let (data, _) = try await URLSession.shared.data(from: url)
@@ -24,7 +31,7 @@ class PostService: PostServiceProtocol {
 
     // MARK: Fetching
     func fetchPosts() async throws -> [Post] {
-        guard let baseUrl = URL(string: Constants.kUrlPosts) else {
+        guard let baseUrl = URL(string: baseUrl + Constants.kUrlPosts) else {
             throw URLError(.badURL)
         }
 
@@ -33,7 +40,7 @@ class PostService: PostServiceProtocol {
     }
 
     func fetchComments() async throws -> [PostComment] {
-        guard let baseUrl = URL(string: Constants.kUrlComments) else {
+        guard let baseUrl = URL(string: baseUrl + Constants.kUrlComments) else {
             throw URLError(.badURL)
         }
 
