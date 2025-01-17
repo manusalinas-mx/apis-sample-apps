@@ -13,13 +13,19 @@ struct PostDetailView: View {
 
     var body: some View {
         VStack {
+            // MARK: - HEADER POST
             PostRowView(post: post, totalComments: comments.count)
                 .padding(.horizontal)
 
+            Divider()
+
+            // MARK: - COMMENT LIST
             List {
                 Section("Comments") {
                     ForEach(comments) { comment in
                         CommentRowView(comment: comment)
+                            .listRowSeparator(.hidden)
+                            .buttonStyle(.plain)
                     }
                 }
             }

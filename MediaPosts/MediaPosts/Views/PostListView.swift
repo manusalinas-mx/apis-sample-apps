@@ -27,6 +27,9 @@ struct PostListView: View {
             }
             .navigationTitle("Timeline")
             .listStyle(.plain)
+            .refreshable {
+                await viewModel.loadPosts()
+            }
             .overlay {
                 if viewModel.isLoading {
                     ProgressView("Loading...")
@@ -37,9 +40,6 @@ struct PostListView: View {
         }
         .alert(isPresented: $viewModel.showErroralert) {
             Alert(title: Text("Error"), message: Text(viewModel.serviceError?.message ?? AppError.unknown.message), dismissButton: .cancel())
-        }
-        .refreshable {
-            await viewModel.loadPosts()
         }
         .task {
             await viewModel.loadPosts()

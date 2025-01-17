@@ -14,6 +14,7 @@ struct PostRowView: View {
 
     var body: some View {
         HStack {
+            // MARK: - ID CAPSULE
             ZStack {
                 Capsule(style: .continuous)
                     .fill(.accent)
@@ -24,18 +25,19 @@ struct PostRowView: View {
             }
             .frame(maxWidth: 30)
             .frame(height: 25)
-            
+
             Spacer()
                 .frame(width: 15)
-            
-            
+
+            // MARK: - INFO
             VStack(alignment: .leading) {
                 Text(post.title.capitalized)
                     .font(.body).fontWeight(.bold)
-                
+
                 Text(post.body)
                     .font(.system(size: 12))
 
+                // MARK: - COMMENTS
                 HStack(spacing: 2) {
                     Spacer()
 
