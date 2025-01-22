@@ -5,12 +5,14 @@
 //  Created by Manuel Salinas on 1/15/25.
 //
 
+import SwiftUI
+
 enum AppError: Error {
     case unknown
     case postError
     case commentError
 
-    var message: String {
+    var message: LocalizedStringKey {
         switch self {
         case .unknown:
             return "Unknown error"

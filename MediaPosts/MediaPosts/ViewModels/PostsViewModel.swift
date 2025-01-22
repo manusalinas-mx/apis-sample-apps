@@ -5,17 +5,16 @@
 //  Created by Manuel Salinas on 1/15/25.
 //
 import Foundation
-import Observation
 
-@Observable
-class PostsViewModel {
+@MainActor
+class PostsViewModel: ObservableObject {
     private let service: PostServiceProtocol
     private var comments: [PostComment] = []
 
-    var posts: [Post] = []
-    var isLoading: Bool = false
-    var serviceError: AppError?
-    var showErroralert: Bool = false
+    @Published var posts: [Post] = []
+    @Published var isLoading: Bool = false
+    @Published var serviceError: AppError?
+    @Published var showErroralert: Bool = false
 
     // MARK: initialization
     init(service: PostServiceProtocol) {

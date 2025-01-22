@@ -8,14 +8,14 @@
 import Foundation
 
 // MARK: - Protocol
-protocol PostServiceProtocol {
+protocol PostServiceProtocol: Sendable {
     var baseUrl: String { get set }
     func fetchPosts() async throws -> [Post]
     func fetchComments() async throws -> [PostComment]
 }
 
 // MARK: - Implementation
-class PostService: PostServiceProtocol {
+class PostService: PostServiceProtocol, @unchecked Sendable {
     var baseUrl: String
 
     init(baseUrl: String) {
