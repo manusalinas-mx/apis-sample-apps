@@ -39,7 +39,7 @@ struct PostListView: View {
             }
         }
         .alert(isPresented: $viewModel.showErroralert) {
-            Alert(title: Text("Error"), message: Text(viewModel.serviceError?.message ?? AppError.unknown.message), dismissButton: .cancel())
+            Alert(title: Text("Error"), message: Text(viewModel.serviceError?.localizedDescription ?? AppError.unknown.localizedDescription), dismissButton: .cancel())
         }
         .task {
             await viewModel.loadPosts()

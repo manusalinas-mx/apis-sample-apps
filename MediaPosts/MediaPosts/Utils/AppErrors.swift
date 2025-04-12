@@ -7,19 +7,22 @@
 
 import SwiftUI
 
-enum AppError: Error {
+enum AppError: LocalizedError {
     case unknown
-    case postError
-    case commentError
+    case post
+    case comment
+    case custom(String)
 
-    var message: LocalizedStringKey {
+    var errorDescription: String? {
         switch self {
         case .unknown:
             return "Unknown error"
-        case .postError:
+        case .post:
             return "Error fetching posts"
-        case .commentError:
+        case .comment:
             return "Error fetching comments"
+        case .custom(let message):
+            return message
         }
     }
 }

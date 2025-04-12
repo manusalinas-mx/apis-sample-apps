@@ -35,12 +35,12 @@ class PostsViewModel: ObservableObject {
             do {
                 comments = try await service.fetchComments().sorted(by: { $0.id < $1.id })
             } catch {
-                serviceError = AppError.commentError
+                serviceError = .comment
                 showErroralert = true
             }
 
         } catch {
-            serviceError = AppError.postError
+            serviceError = .post
             showErroralert = true
         }
 
