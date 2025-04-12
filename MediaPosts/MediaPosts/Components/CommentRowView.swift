@@ -21,7 +21,7 @@ struct CommentRowView: View {
                 Image(systemName: "quote.opening")
                     .foregroundStyle(.gray.opacity(0.5))
                 
-                Text(comment.body)
+                Text(comment.body ?? ". . .")
                     .font(.system(size: 14))
                 
                 HStack {
@@ -29,13 +29,14 @@ struct CommentRowView: View {
 
                     // MARK: - NAME AND EMAIL
                     VStack(alignment: .trailing) {
-                        Text(comment.name)
+                        Text(comment.name ?? "Anonymous")
                             .font(.footnote).fontWeight(.bold)
                             .multilineTextAlignment(.trailing)
                         
                         // Valid Mail link
-                        if let urlMail = URL(string: "mailto:" + comment.email) {
-                            Link(comment.email, destination: urlMail)
+                        if let mail = comment.email,
+                           let urlMail = URL(string: "mailto:" + mail) {
+                            Link(mail, destination: urlMail)
                                 .font(.caption)
                                 .foregroundStyle(.accent)
                         }

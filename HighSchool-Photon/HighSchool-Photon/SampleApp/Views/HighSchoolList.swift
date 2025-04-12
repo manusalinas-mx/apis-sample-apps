@@ -26,8 +26,7 @@ struct HighSchoolList: View {
                 } else {
 
                     if viewModel.highSchools.isEmpty {
-                        Text("No results for '**\(searchText)**'")
-                            .padding()
+                        ContentUnavailableView.search(text: searchText)
                     }
 
                     List(viewModel.highSchools) { highSchool in

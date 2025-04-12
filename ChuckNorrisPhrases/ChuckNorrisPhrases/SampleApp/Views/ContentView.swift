@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State private var viewModel = PhrasesViewModel(service: PhrasesService(urlString: "https://api.chucknorris.io/jokes/random"))
+    @State private var viewModel = PhrasesViewModel(service: PhrasesService(urlString: Apis.kchuckRandomUrl))
 
     var body: some View {
         ZStack {
@@ -21,10 +21,19 @@ struct ContentView: View {
                     ProgressView()
 
                 } else if let error = viewModel.error {
-                    Text(error.localizedDescription)
-                        .font(.title)
-                        .foregroundStyle(.red)
-
+                    ContentUnavailableView {
+                        Text(error.localizedDescription)
+                            .font(.title)
+                            .foregroundStyle(.red)
+                    } actions: {
+                        Button("Reload") {
+                            Task {
+                                await viewModel.loadPhrase()
+                            }
+                        }
+                        .buttonStyle(.borderedProminent)
+                    }
+                    
                 } else if let phrase = viewModel.phrase {
                     PhraseView(phrase: phrase) {
                         Task {
@@ -34,9 +43,9 @@ struct ContentView: View {
                 }
             }
             .padding()
-            .task {
-                await viewModel.loadPhrase()
-            }
+        }
+        .task {
+            await viewModel.loadPhrase()
         }
     }
 }

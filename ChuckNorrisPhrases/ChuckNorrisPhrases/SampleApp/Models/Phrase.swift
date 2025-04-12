@@ -7,10 +7,10 @@
 import Foundation
 
 struct Phrase: Decodable, Identifiable {
-    let id: String
-    let iconUrl: String
-    let url: String
-    let value: String
+    let id: String?
+    let iconUrl: String?
+    let url: String?
+    let value: String?
 
     enum CodingKeys: String, CodingKey {
         case id

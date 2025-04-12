@@ -18,7 +18,7 @@ struct HighSchoolDetail: View {
 
             ScrollView {
                 VStack {
-                    Text(highSchool.name)
+                    Text(highSchool.name ?? "---")
                         .font(.largeTitle.bold())
                     
                     Divider()

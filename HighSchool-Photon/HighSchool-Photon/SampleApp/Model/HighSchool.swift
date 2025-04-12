@@ -8,8 +8,8 @@
 import Foundation
 
 struct HighSchool: Codable, Identifiable {
-    let id: String
-    let name: String
+    let id: String?
+    let name: String?
     let overview: String?
 
     enum CodingKeys: String, CodingKey {
@@ -17,7 +17,6 @@ struct HighSchool: Codable, Identifiable {
         case name = "school_name"
         case overview = "overview_paragraph"
     }
-
 
     static func mock() -> HighSchool {
         HighSchool(id: "12345", name: "Mock High School", overview: "Ipsum latsum long text")

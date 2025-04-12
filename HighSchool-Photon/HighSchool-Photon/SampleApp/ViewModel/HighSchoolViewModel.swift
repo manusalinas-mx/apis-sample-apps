@@ -24,7 +24,7 @@ class HighSchoolViewModel {
         isLoading = true
 
         do {
-            highSchools = try await service.fetchHighSchools().sorted(by: { $0.name < $1.name })
+            highSchools = try await service.fetchHighSchools().sorted(by: { $0.name ?? "" < $1.name ?? "" })
         } catch  {
             errorMessage = error.localizedDescription
         }
@@ -45,7 +45,7 @@ class HighSchoolViewModel {
         await loadHighSchools()
         
         let results = highSchools
-        highSchools = results.filter({ $0.name.localizedCaseInsensitiveContains(term)})
+        highSchools = results.filter{ $0.name?.localizedCaseInsensitiveContains(term) == true }
         isLoading = false
     }
 }

@@ -19,10 +19,6 @@ class PhrasesService {
             throw URLError(.badURL)
         }
 
-        // Intencional delay
-        let delayInSeconds = UInt64(Int.random(in: 1...2))
-        try await Task.sleep(nanoseconds: delayInSeconds * 1_000_000_000)
-
         let (data, _) = try await URLSession.shared.data(from: url)
         return try JSONDecoder().decode(Phrase.self, from: data)
     }

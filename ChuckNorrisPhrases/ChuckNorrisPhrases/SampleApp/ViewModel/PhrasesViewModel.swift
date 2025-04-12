@@ -9,8 +9,7 @@ import Foundation
 import Observation
 
 @Observable
-class PhrasesViewModel{
-
+class PhrasesViewModel {
     var phrase: Phrase?
     var isLoading: Bool = false
     var error: Error?
@@ -30,6 +29,7 @@ class PhrasesViewModel{
         } catch let err {
             error = err
         }
+        
         isLoading = false
     }
 }

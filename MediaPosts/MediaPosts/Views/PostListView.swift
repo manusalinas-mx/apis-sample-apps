@@ -16,7 +16,7 @@ struct PostListView: View {
             // MARK: - LIST
             List(viewModel.posts) { post in
                 // MARK: - POST ROW
-                let comments = viewModel.filterCommentsByPostId(post.id)
+                let comments = viewModel.filterCommentsByPostId(post.id ?? 0)
                 NavigationLink {
                     // MARK: - POST DETAIL
                     PostDetailView(post: post, comments: comments)

@@ -19,7 +19,7 @@ struct PostRowView: View {
                 Capsule(style: .continuous)
                     .fill(.accent)
 
-                Text(post.id.description)
+                Text(post.id?.description ?? "-")
                     .font(.caption2).fontDesign(.rounded).fontWeight(.bold)
                     .foregroundStyle(.white)
             }
@@ -31,10 +31,10 @@ struct PostRowView: View {
 
             // MARK: - INFO
             VStack(alignment: .leading) {
-                Text(post.title.capitalized)
+                Text((post.title ?? "---").capitalized)
                     .font(.body).fontWeight(.bold)
 
-                Text(post.body)
+                Text(post.body ?? ". . .")
                     .font(.system(size: 12))
 
                 // MARK: - COMMENTS

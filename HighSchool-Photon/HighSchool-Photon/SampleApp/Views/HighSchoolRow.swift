@@ -16,11 +16,11 @@ struct HighSchoolRow: View {
                 .font(.title2)
             
             VStack(alignment: .leading) {
-                Text(school.name)
+                Text(school.name ?? "---")
                     .font(.body.bold())
                     .foregroundStyle(.black)
                 
-                Text(school.id)
+                Text(school.id ?? "-1")
                     .font(.footnote)
                 
             }
@@ -28,4 +28,8 @@ struct HighSchoolRow: View {
         }
         .foregroundStyle(.indigo)
     }
+}
+
+#Preview {
+    HighSchoolRow(school: HighSchool(id: "0", name: "De La Salle", overview: "Fresona"))
 }

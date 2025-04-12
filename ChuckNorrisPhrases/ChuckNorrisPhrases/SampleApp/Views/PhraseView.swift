@@ -14,18 +14,21 @@ struct PhraseView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            AsyncImage(url: URL(string: phrase.iconUrl)) { image in
-                image
-                    .resizable()
-                    .scaledToFit()
-            } placeholder: {
-                ProgressView {
-                    Text("Loading...")
+            if let iconUrl = phrase.iconUrl,
+               let url = URL(string: iconUrl) {
+                AsyncImage(url: url) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                } placeholder: {
+                    ProgressView {
+                        Text("Loading...")
+                    }
                 }
+                .frame(width: 150, height: 150)
             }
-            .frame(width: 150, height: 150)
 
-            Text(phrase.value)
+            Text(phrase.value ?? ". . .")
                 .font(.title)
                 .fontDesign(.rounded)
 

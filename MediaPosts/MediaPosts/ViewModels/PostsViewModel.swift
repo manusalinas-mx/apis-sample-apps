@@ -29,11 +29,11 @@ class PostsViewModel: ObservableObject {
 
         do {
             // Getting posts...
-            posts = try await service.fetchPosts().sorted(by: { $0.id < $1.id })
+            posts = try await service.fetchPosts().sorted(by: { $0.id ?? 0 < $1.id ?? 0 })
 
             // Getting comments...
             do {
-                comments = try await service.fetchComments().sorted(by: { $0.id < $1.id })
+                comments = try await service.fetchComments().sorted(by: { $0.id ?? 0 < $1.id ?? 0})
             } catch {
                 serviceError = .comment
                 showErroralert = true
