@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HighSchoolList: View {
-    @State private var viewModel = HighSchoolViewModel(service: HighSchoolService(urlString: "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"))
+    @State private var viewModel = HighSchoolViewModel(service: HighSchoolService(urlString: Apis.kHighSchoolUrl))
     @State private var showError: Bool = false
 
     // Searchable

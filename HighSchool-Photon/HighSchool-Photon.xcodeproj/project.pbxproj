@@ -6,17 +6,34 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3292E1CF2DAE001500B1F084 /* Array+LastItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292E1BF2DAE001500B1F084 /* Array+LastItem.swift */; };
+		3292E1D02DAE001500B1F084 /* HighSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292E1C12DAE001500B1F084 /* HighSchool.swift */; };
+		3292E1D12DAE001500B1F084 /* HighSchoolService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292E1C32DAE001500B1F084 /* HighSchoolService.swift */; };
+		3292E1D22DAE001500B1F084 /* HighSchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292E1C52DAE001500B1F084 /* HighSchoolViewModel.swift */; };
+		3292E1D32DAE001500B1F084 /* HighSchoolDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292E1C72DAE001500B1F084 /* HighSchoolDetail.swift */; };
+		3292E1D42DAE001500B1F084 /* HighSchoolList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292E1C82DAE001500B1F084 /* HighSchoolList.swift */; };
+		3292E1D52DAE001500B1F084 /* HighSchoolRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292E1C92DAE001500B1F084 /* HighSchoolRow.swift */; };
+		3292E1D62DAE001500B1F084 /* HighSchool_PhotonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292E1CD2DAE001500B1F084 /* HighSchool_PhotonApp.swift */; };
+		3292E1D72DAE001500B1F084 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3292E1BD2DAE001500B1F084 /* Preview Assets.xcassets */; };
+		3292E1D82DAE001500B1F084 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3292E1CC2DAE001500B1F084 /* Assets.xcassets */; };
+		3292E1DB2DAE002E00B1F084 /* Apis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292E1DA2DAE002E00B1F084 /* Apis.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		3292E1BD2DAE001500B1F084 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3292E1BF2DAE001500B1F084 /* Array+LastItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+LastItem.swift"; sourceTree = "<group>"; };
+		3292E1C12DAE001500B1F084 /* HighSchool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchool.swift; sourceTree = "<group>"; };
+		3292E1C32DAE001500B1F084 /* HighSchoolService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchoolService.swift; sourceTree = "<group>"; };
+		3292E1C52DAE001500B1F084 /* HighSchoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchoolViewModel.swift; sourceTree = "<group>"; };
+		3292E1C72DAE001500B1F084 /* HighSchoolDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchoolDetail.swift; sourceTree = "<group>"; };
+		3292E1C82DAE001500B1F084 /* HighSchoolList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchoolList.swift; sourceTree = "<group>"; };
+		3292E1C92DAE001500B1F084 /* HighSchoolRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchoolRow.swift; sourceTree = "<group>"; };
+		3292E1CC2DAE001500B1F084 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3292E1CD2DAE001500B1F084 /* HighSchool_PhotonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchool_PhotonApp.swift; sourceTree = "<group>"; };
+		3292E1DA2DAE002E00B1F084 /* Apis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apis.swift; sourceTree = "<group>"; };
 		FFDEC0772CE3F7FB00CC0061 /* HighSchool-Photon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HighSchool-Photon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		FFDEC0792CE3F7FB00CC0061 /* HighSchool-Photon */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "HighSchool-Photon";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FFDEC0742CE3F7FB00CC0061 /* Frameworks */ = {
@@ -29,10 +46,92 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3292E1BE2DAE001500B1F084 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3292E1BD2DAE001500B1F084 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3292E1C02DAE001500B1F084 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3292E1BF2DAE001500B1F084 /* Array+LastItem.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3292E1C22DAE001500B1F084 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3292E1C12DAE001500B1F084 /* HighSchool.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3292E1C42DAE001500B1F084 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3292E1C32DAE001500B1F084 /* HighSchoolService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3292E1C62DAE001500B1F084 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3292E1C52DAE001500B1F084 /* HighSchoolViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3292E1CA2DAE001500B1F084 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3292E1C72DAE001500B1F084 /* HighSchoolDetail.swift */,
+				3292E1C82DAE001500B1F084 /* HighSchoolList.swift */,
+				3292E1C92DAE001500B1F084 /* HighSchoolRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3292E1CB2DAE001500B1F084 /* SampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				3292E1D92DAE001900B1F084 /* Utils */,
+				3292E1C02DAE001500B1F084 /* Extensions */,
+				3292E1C22DAE001500B1F084 /* Model */,
+				3292E1C42DAE001500B1F084 /* Service */,
+				3292E1C62DAE001500B1F084 /* ViewModel */,
+				3292E1CA2DAE001500B1F084 /* Views */,
+			);
+			path = SampleApp;
+			sourceTree = "<group>";
+		};
+		3292E1CE2DAE001500B1F084 /* HighSchool-Photon */ = {
+			isa = PBXGroup;
+			children = (
+				3292E1BE2DAE001500B1F084 /* Preview Content */,
+				3292E1CB2DAE001500B1F084 /* SampleApp */,
+				3292E1CC2DAE001500B1F084 /* Assets.xcassets */,
+				3292E1CD2DAE001500B1F084 /* HighSchool_PhotonApp.swift */,
+			);
+			path = "HighSchool-Photon";
+			sourceTree = "<group>";
+		};
+		3292E1D92DAE001900B1F084 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3292E1DA2DAE002E00B1F084 /* Apis.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		FFDEC06E2CE3F7FB00CC0061 = {
 			isa = PBXGroup;
 			children = (
-				FFDEC0792CE3F7FB00CC0061 /* HighSchool-Photon */,
+				3292E1CE2DAE001500B1F084 /* HighSchool-Photon */,
 				FFDEC0782CE3F7FB00CC0061 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,9 +158,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				FFDEC0792CE3F7FB00CC0061 /* HighSchool-Photon */,
 			);
 			name = "HighSchool-Photon";
 			packageProductDependencies = (
@@ -109,6 +205,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3292E1D72DAE001500B1F084 /* Preview Assets.xcassets in Resources */,
+				3292E1D82DAE001500B1F084 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +217,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3292E1CF2DAE001500B1F084 /* Array+LastItem.swift in Sources */,
+				3292E1D02DAE001500B1F084 /* HighSchool.swift in Sources */,
+				3292E1D12DAE001500B1F084 /* HighSchoolService.swift in Sources */,
+				3292E1D22DAE001500B1F084 /* HighSchoolViewModel.swift in Sources */,
+				3292E1D32DAE001500B1F084 /* HighSchoolDetail.swift in Sources */,
+				3292E1D42DAE001500B1F084 /* HighSchoolList.swift in Sources */,
+				3292E1DB2DAE002E00B1F084 /* Apis.swift in Sources */,
+				3292E1D52DAE001500B1F084 /* HighSchoolRow.swift in Sources */,
+				3292E1D62DAE001500B1F084 /* HighSchool_PhotonApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
