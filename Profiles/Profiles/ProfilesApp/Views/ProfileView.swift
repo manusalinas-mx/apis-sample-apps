@@ -31,9 +31,12 @@ struct ProfileView: View {
                         .environment(viewModel)
 
                     FullNameView(profile: profile)
+                    
                     AdressView(profile: profile)
+                    
                     Spacer()
                     Divider()
+                    
                     ContactView(profile: profile)
                 }
                 .background(Color.indigo.opacity(0.05))

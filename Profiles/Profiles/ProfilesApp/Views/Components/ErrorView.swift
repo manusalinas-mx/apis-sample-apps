@@ -20,7 +20,7 @@ struct ErrorView: View {
                     .foregroundStyle(.red)
 
             } description: {
-                // "
+                // 2
                 Text(error.localizedDescription)
             } actions: {
                 // 3
@@ -37,4 +37,9 @@ struct ErrorView: View {
             .padding()
         }
     }
+}
+
+#Preview {
+    ErrorView(error: MockError.sample)
+        .environment(ProfileViewModel.preview)
 }

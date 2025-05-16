@@ -31,5 +31,5 @@ struct HighSchoolRow: View {
 }
 
 #Preview {
-    HighSchoolRow(school: HighSchool(id: "0", name: "De La Salle", overview: "Fresona"))
+    HighSchoolRow(school: HighSchool(id: "0", name: "De La Salle", overview: "Fresona", totalStudents: "254"))
 }

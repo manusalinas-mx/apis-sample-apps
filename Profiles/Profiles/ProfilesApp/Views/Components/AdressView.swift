@@ -12,15 +12,19 @@ struct AdressView: View {
 
     var body: some View {
         Group {
-            Text("\(profile.location.street.name) #\(profile.location.street.number)")
+            Text("\(profile.location?.street?.name ?? "- - - -") #\(profile.location?.street?.number ?? -1)")
                 .fontWeight(.bold)
-            Text("\(profile.location.city) \(profile.location.state)")
+            Text("\(profile.location?.city ?? "- - - -") \(profile.location?.state ?? "- - - -")")
                 .fontWeight(.regular)
             
-            Text("\(profile.location.country), \(profile.location.postcode ?? "NA")")
+            Text("\(profile.location?.country ?? "NA"), \(profile.location?.postcode ?? "NA")")
                 .font(.footnote)
                 .fontWeight(.thin)
         }
         .fontDesign(.rounded)
     }
+}
+
+#Preview {
+    AdressView(profile: .mock())
 }

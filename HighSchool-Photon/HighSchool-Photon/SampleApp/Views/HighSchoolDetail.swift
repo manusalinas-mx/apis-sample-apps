@@ -16,23 +16,27 @@ struct HighSchoolDetail: View {
             Color.indigo.opacity(0.2)
                 .ignoresSafeArea()
 
-            ScrollView {
                 VStack {
                     Text(highSchool.name ?? "---")
                         .font(.largeTitle.bold())
                     
+                    Text("Total Students: \(highSchool.totalStudents ?? "0")")
+                        .font(.title3)
+                        .underline()
+                    
                     Divider()
                     
-                    if let overview = highSchool.overview  {
-                        Text(overview)
-                            .font(.title3)
-                            .foregroundStyle(.indigo)
-                    }
-                    
+                    ScrollView {
+                        if let overview = highSchool.overview  {
+                            Text(overview)
+                                .font(.title2)
+                                .foregroundStyle(.indigo)
+                        }
+                    } // ScrollView
                 }
                 .padding()
                 .fontDesign(.rounded)
-            }
+            
         }
         .toolbarBackground(.indigo.opacity(0.2), for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)

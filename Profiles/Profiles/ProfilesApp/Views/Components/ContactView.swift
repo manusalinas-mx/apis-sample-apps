@@ -12,11 +12,15 @@ struct ContactView: View {
 
     var body: some View {
         VStack {
-            Label(profile.phone, systemImage: "phone.fill")
-            Label(profile.email, systemImage: "mail.fill")
-            Label(profile.cell, systemImage: "iphone")
+            Label(profile.phone ?? "###-###-####", systemImage: "phone.fill")
+            Label(profile.email ?? "- - - -", systemImage: "mail.fill")
+            Label(profile.cell ?? "###-###-####", systemImage: "iphone")
         }
         .fixedSize(horizontal: false, vertical: true)
         .font(.callout).fontDesign(.rounded)
     }
+}
+
+#Preview {
+    ContactView(profile: .mock())
 }

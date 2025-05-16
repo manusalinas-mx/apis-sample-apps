@@ -15,18 +15,11 @@ protocol PostServiceProtocol: Sendable {
 }
 
 // MARK: - Implementation
-class PostService: PostServiceProtocol, @unchecked Sendable {
+class PostService: PostServiceProtocol, ParseableProtocol,  @unchecked Sendable {
     var baseUrl: String
 
     init(baseUrl: String) {
         self.baseUrl = baseUrl
-    }
-
-    // MARK: Private methods
-    private func fetchData<T: Decodable>(from url: URL) async throws -> T {
-        let (data, _) = try await URLSession.shared.data(from: url)
-        let decodedData = try JSONDecoder().decode(T.self, from: data)
-        return decodedData
     }
 
     // MARK: Fetching

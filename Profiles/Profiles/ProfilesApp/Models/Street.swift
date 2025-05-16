@@ -7,6 +7,13 @@
 
 
 struct Street: Codable {
-    let number: Int
-    let name: String
+    let number: Int?
+    let name: String?
+    
+    static func mock() -> Street {
+        Street(
+            number: 123,
+            name: "Main Street"
+        )
+    }
 }

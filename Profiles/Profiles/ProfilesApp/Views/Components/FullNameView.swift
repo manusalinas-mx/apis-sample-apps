@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct FullNameView: View {
-
     let profile: Profile
 
     var body: some View {
         VStack {
-            Text(profile.name.title)
+            Text(profile.name?.title ?? "- - - -")
                 .font(.callout)
             
-            Text(profile.name.fullname)
+            Text(profile.name?.fullname ?? "- - - -")
                 .font(.largeTitle).fontDesign(.rounded).fontWeight(.bold)
             
-            Text(profile.gender)
+            Text(profile.gender  ?? "none")
                 .foregroundStyle(.gray)
             
             Divider()
         }
     }
+}
+
+#Preview {
+    FullNameView(profile: .mock())
 }

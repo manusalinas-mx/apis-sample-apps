@@ -89,8 +89,8 @@
 		3292E1CA2DAE001500B1F084 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3292E1C72DAE001500B1F084 /* HighSchoolDetail.swift */,
 				3292E1C82DAE001500B1F084 /* HighSchoolList.swift */,
+				3292E1C72DAE001500B1F084 /* HighSchoolDetail.swift */,
 				3292E1C92DAE001500B1F084 /* HighSchoolRow.swift */,
 			);
 			path = Views;
@@ -99,8 +99,8 @@
 		3292E1CB2DAE001500B1F084 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				3292E1D92DAE001900B1F084 /* Utils */,
 				3292E1C02DAE001500B1F084 /* Extensions */,
+				3292E1D92DAE001900B1F084 /* Utils */,
 				3292E1C22DAE001500B1F084 /* Model */,
 				3292E1C42DAE001500B1F084 /* Service */,
 				3292E1C62DAE001500B1F084 /* ViewModel */,
@@ -174,7 +174,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1610;
-				LastUpgradeCheck = 1610;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					FFDEC0762CE3F7FB00CC0061 = {
 						CreatedOnToolsVersion = 16.1;
@@ -267,6 +267,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = D553RDKA55;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -330,6 +331,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = D553RDKA55;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -359,7 +361,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HighSchool-Photon/Preview Content\"";
-				DEVELOPMENT_TEAM = D553RDKA55;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -393,7 +394,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HighSchool-Photon/Preview Content\"";
-				DEVELOPMENT_TEAM = D553RDKA55;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

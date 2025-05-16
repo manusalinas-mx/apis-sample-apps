@@ -7,13 +7,12 @@
 import SwiftUI
 
 struct HeaderProfileView: View {
-
     let profile: Profile
     @Environment(ProfileViewModel.self) var viewModel
 
     var body: some View {
         ZStack {
-            MapView(location: profile.location)
+            MapView(location: profile.location ?? .mock())
                 .overlay {
                     Rectangle()
                         .ignoresSafeArea()
@@ -21,7 +20,7 @@ struct HeaderProfileView: View {
                         .blur(radius: 2)
                 }
 
-            ProfilePictureView(picture: profile.picture)
+            ProfilePictureView(picture: profile.picture ?? Picture.mock())
                 .onTapGesture {
                     Task {
                         await viewModel.loadProfile()
@@ -29,4 +28,9 @@ struct HeaderProfileView: View {
                 }
         }
     }
+}
+
+#Preview {
+    HeaderProfileView(profile: .mock())
+        .environment(ProfileViewModel.preview)
 }

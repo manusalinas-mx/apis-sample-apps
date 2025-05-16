@@ -7,9 +7,17 @@
 
 
 struct Name: Codable {
-    let title, first, last: String
+    let title, first, last: String?
 
     var fullname: String {
-        "\(first) \(last)"
+        "\(first ?? "") \(last ?? "")"
+    }
+    
+    static func mock() -> Name {
+        Name(
+            title: "Mr.",
+            first: "John",
+            last: "Doe"
+        )
     }
 }

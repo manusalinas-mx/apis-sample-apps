@@ -14,9 +14,13 @@ struct MapView: View {
     var body: some View {
 
         Map {
-            Marker("Me", coordinate: CLLocationCoordinate2D(latitude: location.coordinates.lat, longitude: location.coordinates.long))
+            Marker("Me", coordinate: CLLocationCoordinate2D(latitude: location.coordinates?.lat ?? 0.0, longitude: location.coordinates?.long ?? 0.0))
         }
         .disabled(true)
         .frame(maxWidth: .infinity, maxHeight: 220)
     }
+}
+
+#Preview {
+    MapView(location: .mock())
 }

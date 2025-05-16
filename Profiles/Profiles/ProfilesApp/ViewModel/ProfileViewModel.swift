@@ -34,3 +34,10 @@ class ProfileViewModel {
     }
 }
 
+extension ProfileViewModel {
+    static var preview: ProfileViewModel {
+        ProfileViewModel(
+            service: ProfileService(urlString: "mock")
+        )
+    }
+}
